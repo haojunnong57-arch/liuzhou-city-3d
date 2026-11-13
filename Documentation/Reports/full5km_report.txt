@@ -1,0 +1,56 @@
+=== Liuzhou 5x5 km Phase 4 Report ===
+Date: 2026-11-13
+
+DEM points: 28674
+DEM elev range: 75.3 – 271.9 m (mean 97.6)
+Terrain triangles: 56672
+Buildings: 1746
+  estimated height: 1738, real/OSM: 8
+Road segments: 1075
+Water features: 139
+Local domain approx: 5011 m x 4988 m
+Road total length: 252270 m
+Buildings with DEM-sampled base: 1746/1746
+Total triangles across tiles: 104652
+
+Per-tile triangle counts (Terrain / Buildings / Roads / Total):
+  tile_0_0: 2244 / 512 / 126 / 2882
+  tile_1_0: 2263 / 624 / 268 / 3155
+  tile_2_0: 2296 / 1528 / 302 / 4126
+  tile_3_0: 2308 / 2456 / 192 / 4956
+  tile_4_0: 2236 / 1472 / 256 / 3964
+  tile_0_1: 2285 / 656 / 618 / 3559
+  tile_1_1: 2302 / 3248 / 868 / 6418
+  tile_2_1: 2305 / 1520 / 602 / 4427
+  tile_3_1: 2314 / 1904 / 340 / 4558
+  tile_4_1: 2201 / 1376 / 344 / 3921
+  tile_0_2: 2252 / 1848 / 488 / 4588
+  tile_1_2: 2306 / 2232 / 780 / 5318
+  tile_2_2: 2307 / 1232 / 522 / 4061
+  tile_3_2: 2292 / 384 / 650 / 3326
+  tile_4_2: 2260 / 32 / 128 / 2420
+  tile_0_3: 2240 / 704 / 264 / 3208
+  tile_1_3: 2298 / 2664 / 806 / 5768
+  tile_2_3: 2305 / 1928 / 1170 / 5403
+  tile_3_3: 2317 / 1072 / 636 / 4025
+  tile_4_3: 2252 / 1384 / 346 / 3982
+  tile_0_4: 2185 / 32 / 136 / 2353
+  tile_1_4: 2278 / 1272 / 176 / 3726
+  tile_2_4: 2232 / 112 / 194 / 2538
+  tile_3_4: 2214 / 4640 / 414 / 7268
+  tile_4_4: 2180 / 2328 / 194 / 4702
+
+Outputs (local artifacts/Models/Full5km/):
+- Liuzhou_5km.stl ~5.0 MB (104652 tris)
+- Liuzhou_5km.obj ~11 MB
+- Terrain_full.stl ~2.8 MB
+- 25 tiles x Terrain/Buildings/Roads STL
+
+Notes:
+- CRS: EPSG:32649 UTM 49N, local origin at SW corner of bbox.
+- Building bases sampled from DEM grid (~30 m); roads follow DEM elev. 100% draped.
+- Heights: OSM height/levels preferred; else type estimate (marked). Only 8 buildings had direct OSM height/levels.
+- No GlobalBuildingAtlas/GABLE heights ingested this run (license + download size).
+- Bridges/water not extruded as solid volumes yet (feature count recorded).
+- GLB skipped (no glTF lib). No Blender verification.
+- Tile seams: continuous DEM/OSM; minor gaps possible at 30 m DEM resolution.
