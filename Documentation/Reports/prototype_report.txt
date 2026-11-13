@@ -1,0 +1,40 @@
+=== Liuzhou Wuxing 1km Prototype Generation Report ===
+Date: 2026-11-13
+
+DEM points: 1120
+Terrain triangles: 2108
+Wrote Models/Prototype/Terrain.stl (105484 bytes, 2108 tris)
+Buildings parsed: 152
+  of which height estimated: 152
+Building triangles: 5188
+Wrote Models/Prototype/Buildings.stl (259484 bytes, 5188 tris)
+Road segments: 65
+Approx road total length: 15185.1 m
+Road triangles: 802
+Wrote Models/Prototype/Roads.stl (40184 bytes, 802 tris)
+Wrote Models/Prototype/Liuzhou_Prototype.obj (828807 bytes, verts=24294)
+Wrote Models/Prototype/Liuzhou_Prototype.stl (404984 bytes, 8098 tris)
+
+Notes:
+- Ground elevation fixed ~85m for buildings/roads (DEM mean ~88m); terrain uses real DEM elevations.
+- Building heights: OSM height/levels rarely present in this extract → type-based estimate (all marked estimated).
+- Roads are flat ribbons with width by highway class; continuous geometry from OSM centerlines.
+- Coordinate origin: SW corner of 1km bbox (109.407571 E, 24.308208 N), local metric metres.
+- No Blender in environment; geometry validated by STL binary structure + file size + triangle counts.
+- GLB not produced (no glTF library available).
+- Data source: Geofabrik Guangxi OSM PBF clipped with osmium + Copernicus GLO-30 DEM cropped with GDAL.
+- Buildings use real OSM footprints (not random rectangles).
+
+Quality checklist:
+[x] Terrain from DEM
+[x] Buildings from real footprints
+[x] Roads with width + continuous mesh
+[x] Metric scale
+[x] STL readable (binary header valid)
+[x] OBJ with groups (Terrain / Buildings / Roads)
+[ ] Blender open (no binary)
+[ ] GLB
+[ ] Wet PBR / night lights (out of scope for Phase 3)
+[ ] Full 5x5 km (next phase)
+
+Next: improve height assignment, drape buildings on DEM, add simple materials, expand extent.
